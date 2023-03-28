@@ -1,5 +1,6 @@
 const http = require("http");
 const fs = require("fs");
+const args = require("minimist")(process.argv.slice(2));
 
 let homeContent = "";
 let projectContent = "";
@@ -52,4 +53,4 @@ fs.readFile("home.html",(err, home) => {
                 break;
     }
   })
-  .listen(3000);
+  .listen(args);
